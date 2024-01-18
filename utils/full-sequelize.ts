@@ -15,6 +15,7 @@ const { dialect, database, username } = config[env as keyof typeof config];
 const FullSequelize = new Sequelize(database, username, password, {
   host,
   dialect: dialect as Dialect | undefined,
+  dialectModule: require("mysql2"),
 });
 
 export default FullSequelize;
